@@ -1,6 +1,6 @@
 import kue from 'kue';
 
-const blacklistedNum = ['18781', '41381'];
+const screenedNo = ['18781', '41381'];
 
 const queue = kue.createQueue();
 const queueName = 'push_notification_code_2';
@@ -10,8 +10,8 @@ function sendNotification(phoneNumber, message, job) {
 
     job.progress(0, total);
 
-    if (blacklistedNum.includes(phoneNumber)) {
-        throw Error(`Phone number ${phoneNumber} is blacklisted`);
+    if (screenedNo.includes(phoneNumber)) {
+        done(Error(`Phone number ${phoneNumber} is screenedNo`));
         return;
     }
 
@@ -24,5 +24,5 @@ function sendNotification(phoneNumber, message, job) {
 
 queue.process(queueName, 2, (job, done) => {
     const { phoneNumber, message } = job.data;
-    sendNotification(phoneNumber, message, job);
+    sendNotification(phoneNumber, message, job, done);
 });
