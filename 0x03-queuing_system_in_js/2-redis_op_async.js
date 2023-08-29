@@ -19,7 +19,7 @@ function setNewSchool(schoolName, value){
 }
 
 async function displaySchoolValue(schoolName) {
-	console.log(await aysncGet(schoolName));
+	console.log(await ayncGet(schoolName));
 }
 
 displaySchoolValue('Holberton');
