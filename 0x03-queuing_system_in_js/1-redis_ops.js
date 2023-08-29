@@ -1,6 +1,7 @@
 // Import redis
 
 import { createClient } from 'redis';
+import { redis } from 'redis';
 
 const client = createClient();
 // checking server connection
