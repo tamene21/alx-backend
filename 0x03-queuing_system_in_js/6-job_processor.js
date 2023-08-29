@@ -5,7 +5,7 @@ const screenedNo = ['18781', '41381'];
 const queue = kue.createQueue();
 const queueName = 'push_notification_code_2';
 
-function sendNotification(phoneNumber, message, job) {
+function sendNotification(phoneNumber, message, job, done) {
     const total = 100;
 
     job.progress(0, total);
