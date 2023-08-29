@@ -10,6 +10,6 @@ subscriber.on('message', (channel, message) =>{
 	if(channel == 'holberton school channel') console.log(message);
 	if(message == 'KILL_SERVER') {
 		subscriber.unsubscribe();
-		subscriber.quite();	
+		subscriber.quit();	
 	}
 });
