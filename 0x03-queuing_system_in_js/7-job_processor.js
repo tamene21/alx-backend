@@ -1,6 +1,6 @@
 import {createQueue} from 'kue';
 
-const blackList = ['4153518780', '4153518781];
+const blackList = ['4153518780', '4153518781'];
 const sendNotification = (phoneNumber, message, job, done) => {
 	const total = 100;
 
